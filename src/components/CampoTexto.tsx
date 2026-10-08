@@ -24,7 +24,6 @@ export function CampoTexto<T extends FieldValues>({
           ref={ref} value={value}
           onChangeText={(texto) => {
             onChange(texto);
-            // Após o primeiro erro, mostra a correção enquanto a pessoa digita.
             if (erro) onBlur();
           }}
           onBlur={onBlur} placeholderTextColor={cores.inativo}

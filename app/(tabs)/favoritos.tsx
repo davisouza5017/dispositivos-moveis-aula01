@@ -1,7 +1,6 @@
 import { Text, View } from 'react-native';
 import { Link } from 'expo-router';
 
-// Nesta aula o estado dos favoritos permanece local ao catálogo.
 export default function FavoritosScreen() {
   return (
     <View className="flex-1 bg-white dark:bg-fundo p-4 items-center justify-center">

@@ -4,7 +4,6 @@ import { PRODUTOS_TESTE } from '@/utils/gerarProdutos';
 
 export default function DetalheProduto() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  // O parâmetro da rota chega como texto; os IDs dos produtos são números.
   const produto = PRODUTOS_TESTE.find(p => p.id === Number(id));
   if (!produto) {
     return (

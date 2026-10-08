@@ -40,7 +40,6 @@ export const PRODUTOS: Produto[] = [
     discountPercentage: 18.14,
     rating: 3.82,
     stock: 59,
-    // Sem marca propositalmente para validar o fallback 'Sem marca'
     thumbnail: 'https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png',
     images: [
       'https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/1.png'
@@ -145,7 +144,6 @@ export const PRODUTOS: Produto[] = [
     discountPercentage: 9.58,
     rating: 4.48,
     stock: 16,
-    // Sem marca para testar fallback
     thumbnail: 'https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png',
     images: [
       'https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png'

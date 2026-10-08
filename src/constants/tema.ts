@@ -1,4 +1,3 @@
-// Os navegadores recebem cores como valores, em vez de classes NativeWind.
 export const CORES_NAVEGACAO = {
   light: {
     fundo: '#FFFFFF', borda: '#E2E8F0', texto: '#0F172A',
