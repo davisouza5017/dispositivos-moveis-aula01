@@ -15,6 +15,7 @@ export default function LayoutAbas() {
       headerStyle: { backgroundColor: cores.fundo },
       headerTintColor: cores.texto,
       headerRight: () => <BotaoTema />,
+      sceneStyle: { backgroundColor: cores.fundo },
     }}>
       <Tabs.Screen name="index" options={{ title: 'Catálogo',
         tabBarIcon: ({ color, size }) => <Ionicons name="grid-outline" color={color} size={size} />,

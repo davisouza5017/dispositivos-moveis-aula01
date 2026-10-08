@@ -11,8 +11,9 @@ Projeto da disciplina de Dispositivos Móveis, desenvolvido com React Native e E
 | 03 | Pendente de identificação | O commit chamado “aula 03” reintroduziu o App.js da Aula 01 com erro de sintaxe; não comprova uma implementação da Aula 03. |
 | 04 | [aula-04](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-04) | Catálogo de produtos em TypeScript, componentes, filtro de categorias, favoritos, NativeWind e TailwindCSS. |
 | 05 | [aula-05](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-05) | Expo Router, abas, detalhe de produto, tela de erro, temas e typedRoutes. |
+| 06 | [aula-06](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-06) | FlatList com 500 produtos, estados da lista, atualização simulada e memoização. |
 
-A branch `main` reúne a implementação da Aula 05 e este índice. As branches anteriores preservam as respectivas versões.
+A branch `main` reúne a implementação da Aula 06 e este índice. As branches anteriores preservam as respectivas versões.
 
 ## Como consultar uma aula
 
@@ -60,7 +61,24 @@ O scheme é `vitrine`, por exemplo `vitrine://produto/3` numa instalação nativ
 - `/produto/999` mostra “Produto não encontrado”. Um caminho inexistente mostra “Esta tela não existe”.
 - Com o servidor já iniciado, troque temporariamente `/produto/` por `/produtos/` no catálogo: `npm run check` deve falhar. Desfaça a alteração e confira novamente.
 
-## Componentes e dados
+## Aula 06 — listas, estados e desempenho
+
+O catálogo usa `FlatList`, com filtro em `ListHeaderComponent`, mensagem vazia em `ListEmptyComponent` e espaçamento em `ItemSeparatorComponent`. As chaves são IDs únicos, convertidos para texto.
+
+- `src/utils/gerarProdutos.ts` gera 500 itens uma única vez. O detalhe e o catálogo consultam a mesma constante `PRODUTOS_TESTE`.
+- `src/components/CardProduto.tsx` usa `memo`. As funções `abrir` e `alternarFavorito` usam `useCallback`, e a abertura recebe o ID do cartão.
+- `useMemo` refaz a filtragem somente quando a categoria muda.
+- `src/components/EstadosDeLista.tsx` contém `Carregando`, `Vazio` e `Erro`, com callback para tentar novamente.
+- `refreshing` e `onRefresh` simulam a atualização em 1,2 segundo, desligando o indicador no bloco `finally`.
+- `sceneStyle` acompanha o tema das abas, inclusive quando a tela exibe carregamento ou erro.
+
+Nesta aula os dados são locais: o carregamento fica em `false`, e o componente de erro fica preparado para a busca da Aula 08. A versão final mantém quatro categorias e não contém os logs nem os estados forçados usados nos experimentos.
+
+Para executar esta versão, use `git switch aula-06`, `npm ci` e `npx expo start --go`. Depois de iniciar o servidor uma vez, execute `npm run check`.
+
+Consulte [as medições e os testes da Aula 06](docs/aula-06-validacao.md). O gesto de puxar para atualizar e a taxa de quadros devem ser conferidos no celular ou emulador.
+
+### Dados e componentes compartilhados
 
 - `src/components/`: cards dos produtos, filtro e botão de tema.
 - `src/constants/`: produtos de exemplo e tema.

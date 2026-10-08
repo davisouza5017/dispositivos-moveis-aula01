@@ -1,25 +1,25 @@
-import React from 'react';
+import { memo } from 'react';
 import { Image, Pressable, Text, View } from 'react-native';
 import { Produto } from '@/types/produto';
 
 interface CardProdutoProps {
   produto: Produto;
-  aoAbrir?: () => void;
+  aoAbrir: (id: number) => void;
   favorito: boolean;
   aoAlternarFavorito: (id: number) => void;
 }
 
-export const CardProduto: React.FC<CardProdutoProps> = ({
+function CardProdutoBase({
   produto,
   favorito,
   aoAlternarFavorito,
   aoAbrir,
-}) => {
+}: CardProdutoProps) {
   const marca = produto.brand ?? 'Sem marca';
   const precoFormatado = produto.price.toFixed(2);
 
   return (
-    <View className="flex-row items-center gap-3 bg-slate-100 dark:bg-superficie rounded-card p-3 mb-3">
+    <View className="flex-row items-center gap-3 bg-slate-100 dark:bg-superficie rounded-card p-3">
       <Image
         source={{ uri: produto.thumbnail }}
         className="w-16 h-16 rounded-lg bg-slate-200 dark:bg-fundo"
@@ -27,7 +27,7 @@ export const CardProduto: React.FC<CardProdutoProps> = ({
         accessibilityLabel={`Foto do produto ${produto.title}`}
       />
 
-      <Pressable onPress={aoAbrir} accessibilityRole="button" accessibilityLabel={`Abrir ${produto.title}`} className="flex-1 justify-center active:opacity-70">
+      <Pressable onPress={() => aoAbrir(produto.id)} accessibilityRole="button" accessibilityLabel={`Abrir ${produto.title}`} className="flex-1 justify-center active:opacity-70">
         <Text className="text-slate-500 dark:text-suave text-xs mt-0.5" numberOfLines={1}>
           {marca}
         </Text>
@@ -61,4 +61,6 @@ export const CardProduto: React.FC<CardProdutoProps> = ({
       </Pressable>
     </View>
   );
-};
+}
+
+export const CardProduto = memo(CardProdutoBase);
