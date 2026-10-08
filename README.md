@@ -12,8 +12,9 @@ Projeto da disciplina de Dispositivos Móveis, desenvolvido com React Native e E
 | 04 | [aula-04](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-04) | Catálogo de produtos em TypeScript, componentes, filtro de categorias, favoritos, NativeWind e TailwindCSS. |
 | 05 | [aula-05](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-05) | Expo Router, abas, detalhe de produto, tela de erro, temas e typedRoutes. |
 | 06 | [aula-06](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-06) | FlatList com 500 produtos, estados da lista, atualização simulada e memoização. |
+| 07 | [aula-07](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-07) | Login e cadastro com React Hook Form, Yup, Controller e envio simulado. |
 
-A branch `main` reúne a implementação da Aula 06 e este índice. As branches anteriores preservam as respectivas versões.
+A branch `main` reúne a implementação da Aula 07 e este índice. As branches anteriores preservam as respectivas versões.
 
 ## Como consultar uma aula
 
@@ -77,6 +78,20 @@ Nesta aula os dados são locais: o carregamento fica em `false`, e o componente 
 Para executar esta versão, use `git switch aula-06`, `npm ci` e `npx expo start --go`. Depois de iniciar o servidor uma vez, execute `npm run check`.
 
 Consulte [as medições e os testes da Aula 06](docs/aula-06-validacao.md). O gesto de puxar para atualizar e a taxa de quadros devem ser conferidos no celular ou emulador.
+
+## Aula 07 — formulários e validação
+
+- `app/(auth)/login.tsx` e `cadastro.tsx`: formulários, envio assíncrono simulado e navegação com `replace`.
+- `src/validacao/`: regras Yup e tipos derivados com `InferType`.
+- `src/components/CampoTexto.tsx`: rótulo, campo controlado pelo `Controller`, erro e cores dos dois temas.
+- `mode: 'onBlur'`: valida após sair do campo. Ao corrigir um campo com erro, o componente revalida durante a digitação. `reValidateMode: 'onChange'` também atua após o envio.
+- `isSubmitting` bloqueia o botão e mostra o texto de espera. `setError('root', ...)` mostra o erro geral do login; `setError('email', ...)` mostra o erro de e-mail já usado.
+
+Abra `/login` ou `/cadastro` no navegador (`npm run web`). No Expo Go, abra esses caminhos no endereço do servidor de desenvolvimento. O link temporário em Favoritos foi removido, conforme o laboratório; a integração com sessão fica para a Aula 09.
+
+O login de teste é **emilys / emilyspass**. O cadastro simula duplicidade para **emily.johnson@x.dummyjson.com**. Não há API, sessão ou conta persistida nesta aula: um cadastro válido retorna ao login, e somente as credenciais de teste entram no catálogo.
+
+Consulte [os testes da Aula 07](docs/aula-07-validacao.md).
 
 ### Dados e componentes compartilhados
 

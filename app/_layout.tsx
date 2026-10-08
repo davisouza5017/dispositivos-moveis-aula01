@@ -19,6 +19,7 @@ export default function LayoutRaiz() {
         contentStyle: { backgroundColor: cores.fundo },
       }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="produto/[id]" options={{ title: 'Detalhe do produto' }} />
       </Stack>
       <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
