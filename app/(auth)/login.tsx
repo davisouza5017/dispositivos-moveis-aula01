@@ -1,7 +1,8 @@
-import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView, Text, View } from 'react-native';
 import { Link, router } from 'expo-router';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { BotaoEnviar } from '@/components/BotaoEnviar';
 import { CampoTexto } from '@/components/CampoTexto';
 import { DadosLogin, esquemaLogin } from '@/validacao/login';
 
@@ -35,13 +36,8 @@ export default function Login() {
           placeholder="ex.: emilys" autoCapitalize="none" autoCorrect={false} autoComplete="username" />
         <CampoTexto control={control} name="senha" rotulo="Senha" erro={errors.senha?.message}
           placeholder="mínimo 6 caracteres" secureTextEntry autoComplete="password" />
-        <Pressable onPress={handleSubmit(aoEnviar)} disabled={isSubmitting} accessibilityRole="button"
-          accessibilityState={{ disabled: isSubmitting }}
-          className={`rounded-full py-4 items-center mt-2 ${isSubmitting ? 'bg-slate-200 dark:bg-superficie' : 'bg-sky-600 dark:bg-destaque active:opacity-80'}`}>
-          <Text className={`font-bold ${isSubmitting ? 'text-slate-500 dark:text-suave' : 'text-white dark:text-fundo'}`}>
-            {isSubmitting ? 'Entrando...' : 'Entrar'}
-          </Text>
-        </Pressable>
+        <BotaoEnviar aoPressionar={handleSubmit(aoEnviar)} enviando={isSubmitting}
+          texto="Entrar" textoEnviando="Entrando..." />
         <Link href="/cadastro" replace className="text-sky-700 dark:text-destaque text-center mt-6">Ainda não tenho conta</Link>
       </ScrollView>
     </KeyboardAvoidingView>

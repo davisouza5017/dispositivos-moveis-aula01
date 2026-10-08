@@ -27,8 +27,12 @@ export default function CatalogoScreen() {
 
   // A atualização funcional evita capturar um estado antigo dos favoritos.
   const alternarFavorito = useCallback((id: number) => {
-    setFavoritos(atuais => atuais.includes(id)
-      ? atuais.filter(f => f !== id) : [...atuais, id]);
+    setFavoritos(atuais => {
+      if (atuais.includes(id)) {
+        return atuais.filter(favoritoId => favoritoId !== id);
+      }
+      return [...atuais, id];
+    });
   }, []);
 
   const abrir = useCallback((id: number) => router.push(`/produto/${id}`), [router]);

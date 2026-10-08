@@ -14,6 +14,9 @@ Implementação baseada no laboratório, resumo e slides fornecidos pelo profess
 - Cadastro válido: retorna ao login com formulário novo.
 - Login `emilys / emilyspass`: abre catálogo.
 - Links entre login e cadastro usam `replace`.
+- Aparência dos formulários e mensagens conferida nos temas claro e escuro.
+
+Após simplificar, foram rechecados os botões compartilhados e a alternância de favorito. A tabela de cores removida não tinha referências no app.
 
 `npm run check` verifica TypeScript após o Expo gerar os tipos das rotas. O teclado virtual, o ajuste do KeyboardAvoidingView e o gesto de atualização devem ser conferidos em celular/emulador; o navegador não comprova esses comportamentos nativos.
 

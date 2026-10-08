@@ -93,6 +93,12 @@ O login de teste é **emilys / emilyspass**. O cadastro simula duplicidade para 
 
 Consulte [os testes da Aula 07](docs/aula-07-validacao.md).
 
+### Simplificações para estudar
+
+O botão repetido de login e cadastro foi reunido em `BotaoEnviar`, a tabela antiga de cores sem uso foi removida e a alternância de favorito usa um `if` explícito. Foram preservados os recursos exigidos: memoização, FlatList, Controller genérico, InferType e validações. A implementação da Aula 07 e esta revisão têm commits separados.
+
+Consulte o [guia da prova oral e dos exercícios de alteração](docs/guia-prova-p1.md).
+
 ### Dados e componentes compartilhados
 
 - `src/components/`: cards dos produtos, filtro e botão de tema.
