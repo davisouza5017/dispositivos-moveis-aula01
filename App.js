@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-  // Exercício 1 e 3: Declaração de constante de texto e exibição dinâmica
   const nome = 'Aluno';
 
   return (
