@@ -17,7 +17,7 @@ export const FiltroCategorias: React.FC<FiltroCategoriasProps> = ({
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerClassName="gap-2 items-center"
-      className="mb-4"
+      className="mb-4 grow-0 shrink-0"
     >
       {categorias.map((categoria) => {
         const ativa = categoria === selecionada;
