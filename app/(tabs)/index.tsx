@@ -17,7 +17,6 @@ export default function CatalogoScreen() {
   const router = useRouter();
   const [categoria, setCategoria] = useState('todas');
   const [favoritos, setFavoritos] = useState<number[]>([]);
-  // Dados locais nesta aula; a busca real será introduzida na Aula 08.
   const [carregando] = useState(false);
   const [atualizando, setAtualizando] = useState(false);
 
@@ -25,7 +24,6 @@ export default function CatalogoScreen() {
     ? PRODUTOS_TESTE
     : PRODUTOS_TESTE.filter(p => p.category === categoria), [categoria]);
 
-  // A atualização funcional evita capturar um estado antigo dos favoritos.
   const alternarFavorito = useCallback((id: number) => {
     setFavoritos(atuais => atuais.includes(id)
       ? atuais.filter(f => f !== id) : [...atuais, id]);
@@ -36,7 +34,6 @@ export default function CatalogoScreen() {
   const atualizar = useCallback(async () => {
     setAtualizando(true);
     try {
-      // Simulação do laboratório, substituída pela chamada à API na Aula 08.
       await new Promise(resolve => setTimeout(resolve, 1200));
     } finally {
       setAtualizando(false);
@@ -48,7 +45,6 @@ export default function CatalogoScreen() {
       aoAlternarFavorito={alternarFavorito} aoAbrir={abrir} />
   ), [favoritos, alternarFavorito, abrir]);
 
-  // Todos os hooks devem ser chamados antes de qualquer retorno antecipado.
   if (carregando) return <Carregando texto="Buscando produtos..." />;
 
   return (

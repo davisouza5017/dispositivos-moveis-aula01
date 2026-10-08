@@ -8,7 +8,6 @@ import { CORES_NAVEGACAO } from '@/constants/tema';
 export default function LayoutRaiz() {
   const { colorScheme, setColorScheme } = useColorScheme();
   const cores = CORES_NAVEGACAO[colorScheme === 'dark' ? 'dark' : 'light'];
-  // Confirma o tema inicial também nas classes dark: da versão web.
   useEffect(() => { setColorScheme(colorScheme ?? 'light'); }, []);
   return (
     <>
