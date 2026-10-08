@@ -1,42 +1,50 @@
-# Aula 01 - Dispositivos Móveis (FATEC)
+# Dispositivos Móveis — FATEC
 
-Atividade prática da Aula 01 da disciplina de Dispositivos Móveis
+Projeto da disciplina de Dispositivos Móveis, desenvolvido com React Native e Expo. As versões de cada aula estão separadas em branches para consulta e avaliação.
 
-## Sobre o projeto
+## Versões em ordem das aulas
 
-Primeiro app feito em React Native utilizando Expo (SDK 57). O objetivo foi entender a estrutura básica de componentes, estilização com StyleSheet, funcionamento do Flexbox e a lógica inicial de estados no React
+| Aula | Versão | Conteúdo e situação |
+| --- | --- | --- |
+| 01 | [aula-01](../../tree/aula-01) | Hello World, interpolação no JSX, StyleSheet e Flexbox. Inclui o README atualizado da aula. |
+| 02 | Pendente de identificação | Não foi localizada uma versão correspondente no histórico disponível. |
+| 03 | Pendente de identificação | O commit chamado “aula 03” reintroduziu o App.js da Aula 01 com erro de sintaxe; não comprova uma implementação da Aula 03. |
+| 04 | [aula-04](../../tree/aula-04) | Catálogo de produtos em TypeScript, componentes, filtro de categorias, favoritos, NativeWind e TailwindCSS. |
 
-## Tecnologias
+A branch `main` reúne o catálogo da Aula 04 e este índice. As branches das aulas preservam os arquivos dos respectivos commits, sem alterações de código.
 
-- React Native (0.86.2)
-- React (19.2.3)
-- Expo SDK 57
-- Suporte web configurado (`react-dom`, `react-native-web`, `@expo/metro-runtime`)
+## Como consultar uma aula
 
-## Exercícios da apostila
+Clique no link da versão na tabela ou use o seletor de branches do GitHub. Para baixar uma versão, selecione a branch e use **Code → Download ZIP**.
 
-### Exercícios 1 e 3
-- Criação da tela inicial com o texto "Hello World!" estilizado (fontSize: 32, bold e cor azul `#2563eb`).
-- Declaração da constante `nome = 'Aluno'` e interpolação no JSX exibindo "Hello, {nome}!"
+Para executar localmente:
 
-### Exercício 2 - Flexbox
-- No React Native o padrao é `flexDirection: 'column'`:
-  - Eixo principal: vertical (alinhado por `justifyContent`).
-  - Eixo cruzado: horizontal (alinhado por `alignItems`).
-- Ao alterar para `flexDirection: 'row'`:
-  - O eixo principal passa a ser o horizontal, logo o `justifyContent` passa a centralizar/alinhar na horizontal.
-  - O eixo cruzado passa a ser o vertical, logo o `alignItems` passa a alinhar na vertical.
+```bash
+git clone https://github.com/davisouza5017/dispositivos-moveis-aula01.git
+cd dispositivos-moveis-aula01
+git switch aula-01
+npm ci
+npm start
+```
 
-### Exercício 4 - Pensar em Estado (Login)
-Mapeamento dos dados dos quais a tela depende:
+Substitua `aula-01` por `aula-04` para consultar o catálogo. Execute novamente `npm ci` ao trocar de versão, pois as dependências mudaram.
 
-- `usuario` / `email` (string): armazena o que o usuário digita no campo de login.
-- `senha` (string): armazena o texto digitado no campo de senha mascarada.
-- `carregando` (boolean): quando true, exibe o indicador de loading e desabilita o botão para evitar cliques duplicados.
-- `erroAutenticacao` (string/boolean): quando houver falha, exibe a mensagem de erro em vermelho na tela.
+## Organização do catálogo
 
-## ler dps >> Como rodar o projeto
+- `App.tsx`: entrada visual do aplicativo.
+- `src/screens/CatalogoScreen.tsx`: lista, categorias e estado dos favoritos.
+- `src/components/`: cabeçalho, cards dos produtos e filtro.
+- `src/constants/`: produtos de exemplo e tema.
+- `src/types/produto.ts`: tipos dos dados.
+- Arquivos de configuração do NativeWind, TailwindCSS, Metro e TypeScript na raiz.
 
-1. Instalar as dependencias:
-   ```bash
-   npm install
+## Rastreabilidade
+
+| Versão | Commit de origem |
+| --- | --- |
+| Aula 01 | `08162b4a47f6d568bfbaf0a7a3d1a2ec541faa4e` |
+| Aula 04 | `e07d462377bfa53ace4f0689166bb7e4f6c0db8a` |
+
+O estado anterior à organização foi preservado em [historico/estado-original](../../tree/historico/estado-original), no commit `316227716813c5c0c53cefdd327f27761c2c9116`. O histórico de commits foi mantido.
+
+As aulas 02 e 03 devem ser identificadas ou implementadas conforme os enunciados do professor antes da entrega completa.
