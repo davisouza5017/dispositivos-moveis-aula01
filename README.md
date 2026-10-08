@@ -7,8 +7,6 @@ Projeto da disciplina de Dispositivos Móveis, desenvolvido com React Native e E
 | Aula | Versão | Conteúdo e situação |
 | --- | --- | --- |
 | 01 | [aula-01](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-01) | Hello World, interpolação no JSX, StyleSheet e Flexbox. Inclui o README atualizado da aula. |
-| 02 | Pendente de identificação | Não foi localizada uma versão correspondente no histórico disponível. |
-| 03 | Pendente de identificação | O commit chamado “aula 03” reintroduziu o App.js da Aula 01 com erro de sintaxe; não comprova uma implementação da Aula 03. |
 | 04 | [aula-04](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-04) | Catálogo de produtos em TypeScript, componentes, filtro de categorias, favoritos, NativeWind e TailwindCSS. |
 | 05 | [aula-05](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-05) | Expo Router, abas, detalhe de produto, tela de erro, temas e typedRoutes. |
 | 06 | [aula-06](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-06) | FlatList com 500 produtos, estados da lista, atualização simulada e memoização. |
@@ -114,5 +112,3 @@ Consulte o [guia da prova oral e dos exercícios de alteração](docs/guia-prova
 | Aula 04 | `e07d462377bfa53ace4f0689166bb7e4f6c0db8a` |
 
 O estado anterior à organização foi preservado em [historico/estado-original](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/historico/estado-original), no commit `316227716813c5c0c53cefdd327f27761c2c9116`. O histórico de commits foi mantido.
-
-As aulas 02 e 03 devem ser identificadas ou implementadas conforme os enunciados do professor antes da entrega completa.
