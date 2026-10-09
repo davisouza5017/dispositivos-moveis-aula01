@@ -11,5 +11,3 @@ Projeto da disciplina de Dispositivos Móveis, desenvolvido com React Native e E
 | 05 | [aula-05](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-05) | Expo Router, abas, detalhe de produto, tela de erro, temas e typedRoutes. |
 | 06 | [aula-06](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-06) | FlatList com 500 produtos, estados da lista, atualização simulada e memoização. |
 | 07 | [aula-07](https://github.com/davisouza5017/dispositivos-moveis-aula01/tree/aula-07) | Login e cadastro com React Hook Form, Yup, Controller e envio simulado. |
-
-A branch `main` reúne a implementação da Aula 07 e este índice. As branches anteriores preservam as respectivas versões.
